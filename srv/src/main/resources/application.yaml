@@ -2,6 +2,8 @@
 ---
 spring:
   config.activate.on-profile: default
-  sql.init.platform: h2
-cds:
-  data-source.auto-config.enabled: false
+  datasource:
+    url: "jdbc:sqlite:sqlite.db"
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 1
