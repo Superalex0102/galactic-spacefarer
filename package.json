@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "devDependencies": {
     "@sap/cds-dk": "^10.0.5"
-  }
+  },
+  "sapux": [
+    "app/galactic-spacefarers"
+  ]
 }

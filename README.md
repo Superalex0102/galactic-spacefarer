@@ -29,3 +29,9 @@ The application will be available at http://localhost:8080.
 To redeploy the schema and reload CSV mock data without triggering a full Maven build:
 
 `cds deploy --to sqlite:srv/sqlite.db`
+
+### 4. Run Galactic List Report Fiori Appliaction
+
+`npx ui5 serve --port 8081`
+
+The application will be available at http://localhost:8081/index.html.
