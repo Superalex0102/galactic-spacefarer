@@ -10,6 +10,7 @@ type SpacesuitColor : String Enum {
 entity SpaceFarer {
     key ID : UUID;
     name : String(32);
+    email: String(32);
     starductCollection : Integer;
     wormholeNavigationSkill : Integer;
     planet : Association to Planet;
