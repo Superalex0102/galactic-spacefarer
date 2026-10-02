@@ -37,6 +37,22 @@ public class GalacticServiceHandler implements EventHandler {
         if (spacefarer.getWormholeNavigationSkill() == null || spacefarer.getWormholeNavigationSkill() < 0 || spacefarer.getWormholeNavigationSkill() > 100) {
             throw new ServiceException(ErrorStatuses.BAD_REQUEST, "Wormhole navigation skill must be a non-negative integer between 0 and 100");
         }
+
+        // enhance
+        int stardust = spacefarer.getStarductCollection();
+        int skill = spacefarer.getWormholeNavigationSkill();
+
+        int stardustBonus = Math.max(1, skill / 10);
+        long enhancedStardust = (long) stardust + stardustBonus;
+
+        if (enhancedStardust > Integer.MAX_VALUE) {
+            throw new ServiceException(
+                ErrorStatuses.BAD_REQUEST,
+                "Stardust collection is too large");
+        }
+
+        spacefarer.setStarductCollection((int) enhancedStardust);
+        spacefarer.setWormholeNavigationSkill(Math.min(100, skill + 1));
     }
 
     @After(event = { CqnService.EVENT_CREATE }, entity = SpaceFarers_.CDS_NAME)

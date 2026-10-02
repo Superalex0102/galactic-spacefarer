@@ -31,13 +31,19 @@ annotate service.SpaceFarers with @(
         ],
     },
     UI.Facets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID : 'GeneratedFacet1',
-            Label : 'General Information',
-            Target : '@UI.FieldGroup#GeneratedGroup',
-        },
-    ],
+    {
+        $Type : 'UI.ReferenceFacet',
+        ID : 'GeneratedFacet1',
+        Label : 'General Information',
+        Target : '@UI.FieldGroup#GeneratedGroup',
+    },
+    {
+        $Type : 'UI.ReferenceFacet',
+        ID : 'EditableDetailsFacet',
+        Label : 'Spacefarer Details',
+        Target : '@UI.FieldGroup#EditableDetails',
+    },
+],
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
@@ -65,5 +71,25 @@ annotate service.SpaceFarers with @(
             Value : spaceSuitColor,
         },
     ],
+    UI.FieldGroup #EditableDetails : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Label : 'Stardust collection',
+                Value : starductCollection,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Wormhole navigation skill',
+                Value : wormholeNavigationSkill,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Spacesuit color',
+                Value : spaceSuitColor,
+            }
+        ]
+    },
 );
 
